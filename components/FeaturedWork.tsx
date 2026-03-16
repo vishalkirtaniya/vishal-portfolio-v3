@@ -89,9 +89,9 @@ export default function FeaturedWork() {
                     <ArrowRight size={12} className="group-hover/link:translate-x-0.5 transition-transform" />
                   </Link>
                   <div className="flex items-center gap-3">
-                    {project.github && (
+                    {project.githubBackend && (
                       <a
-                        href={project.github}
+                        href={project.githubBackend}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-gray-600 hover:text-gray-300 transition-colors"

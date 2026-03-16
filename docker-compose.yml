@@ -1,0 +1,15 @@
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: portfolio
+    restart: unless-stopped
+    ports:
+      - "3030:3030"
+    networks:
+      - portfolio-network
+
+networks:
+  portfolio-network:
+    driver: bridge
