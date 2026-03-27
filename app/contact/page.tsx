@@ -158,7 +158,7 @@ export default function ContactPage() {
                     {
                       icon: Github,
                       label: "GitHub",
-                      handle: "@vishalkirtaniya",
+                      handle: "vishalkirtaniya",
                       href: "https://github.com/vishalkirtaniya",
                     },
                     {

@@ -8,24 +8,29 @@ import Footer from "@/components/Footer";
 
 const timeline = [
   {
-    year: "2025",
-    title: "Full Stack & ML",
-    desc: "Building production e-commerce systems with Next.js + Fastify + Supabase. Actively learning machine learning with PyTorch.",
+    year: "Now",
+    title: "Exploring AI & New Opportunities",
+    desc: "Actively learning ML, data science, and AI while exploring what's next. Open to roles where I can build meaningful things at the intersection of software engineering and intelligent systems.",
+  },
+  {
+    year: "2026",
+    title: "Back to Fundamentals",
+    desc: "Started a new chapter — diving deep into machine learning, artificial intelligence, and the mathematical foundations of computing. Rebuilding from first principles with a clearer sense of direction.",
   },
   {
     year: "2024",
-    title: "Quant Developer",
-    desc: "Developed an algorithmic trading system using Backtrader, MACD & Bollinger Band strategies, with parallel optimization and live paper trading via Dhan SDK.",
+    title: "First Tech Job — Totality Corp",
+    desc: "Joined a tech startup in Gurgaon, India as a full-stack developer. Spent 1.5 years shipping real products, working in a fast-paced team, and growing from a self-taught coder into a professional engineer.",
   },
   {
     year: "2023",
-    title: "Started Full Stack",
-    desc: "Dived deep into React and Node.js ecosystem, building full-stack apps and learning TypeScript, databases, and deployment pipelines.",
+    title: "Self-Taught Developer",
+    desc: "Taught myself to code from scratch. Built projects, broke things, fixed them, and learned more from mistakes than any course could teach. Fell in love with the craft of building software.",
   },
   {
     year: "2022",
-    title: "First Lines of Code",
-    desc: "Began the journey with Python and JavaScript. Built small scripts, automation tools, and fell in love with problem-solving through code.",
+    title: "NEET Aspirant → Pivot to Code",
+    desc: "Spent three years preparing for NEET, cracked it — but walking away from an MBBS seat was the best decision I ever made. Chose to follow curiosity over convention and turned to programming.",
   },
 ];
 
