@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, Linkedin, Github, CheckCircle } from "lucide-react";
+import { Send, Mail, Linkedin, Github, Phone, CheckCircle } from "lucide-react";
 import { fadeUp, stagger } from "@/lib/motion";
 import Footer from "@/components/Footer";
 
@@ -20,9 +20,25 @@ export default function ContactPage() {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) return;
     setStatus("sending");
-    // Replace with your actual form handler (Formspree, Resend, etc.)
-    await new Promise((r) => setTimeout(r, 1200));
-    setStatus("sent");
+
+    try {
+      const res = await fetch("https://formspree.io/f/xpqopjpw", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (res.ok) {
+        setStatus("sent");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   const inputClass =
@@ -67,68 +83,76 @@ export default function ContactPage() {
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs text-gray-500 mb-2 tracking-wide">
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={form.name}
-                        onChange={handleChange}
-                        placeholder="Your name"
-                        className={inputClass}
-                        required
-                      />
+                <>
+                  {status === "error" && (
+                    <div className="mb-4 px-4 py-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                      Something went wrong. Please try again or email me
+                      directly.
+                    </div>
+                  )}
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-xs text-gray-500 mb-2 tracking-wide">
+                          Name
+                        </label>
+                        <input
+                          type="text"
+                          name="name"
+                          value={form.name}
+                          onChange={handleChange}
+                          placeholder="Your name"
+                          className={inputClass}
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs text-gray-500 mb-2 tracking-wide">
+                          Email
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={form.email}
+                          onChange={handleChange}
+                          placeholder="you@example.com"
+                          className={inputClass}
+                          required
+                        />
+                      </div>
                     </div>
                     <div>
                       <label className="block text-xs text-gray-500 mb-2 tracking-wide">
-                        Email
+                        Message
                       </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={form.email}
+                      <textarea
+                        name="message"
+                        value={form.message}
                         onChange={handleChange}
-                        placeholder="you@example.com"
-                        className={inputClass}
+                        placeholder="Tell me about your project, opportunity, or just say hi..."
+                        rows={6}
+                        className={`${inputClass} resize-none`}
                         required
                       />
                     </div>
-                  </div>
-                  <div>
-                    <label className="block text-xs text-gray-500 mb-2 tracking-wide">
-                      Message
-                    </label>
-                    <textarea
-                      name="message"
-                      value={form.message}
-                      onChange={handleChange}
-                      placeholder="Tell me about your project, opportunity, or just say hi..."
-                      rows={6}
-                      className={`${inputClass} resize-none`}
-                      required
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    disabled={status === "sending"}
-                    className="inline-flex items-center gap-2 bg-cyan-400 text-black text-sm font-semibold px-6 py-3 rounded-full hover:bg-cyan-300 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200"
-                  >
-                    {status === "sending" ? (
-                      <>
-                        <span className="w-3.5 h-3.5 border-2 border-black/30 border-t-black rounded-full animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        Send message <Send size={14} />
-                      </>
-                    )}
-                  </button>
-                </form>
+                    <button
+                      type="submit"
+                      disabled={status === "sending"}
+                      className="inline-flex items-center gap-2 bg-cyan-400 text-black text-sm font-semibold px-6 py-3 rounded-full hover:bg-cyan-300 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200"
+                    >
+                      {status === "sending" ? (
+                        <>
+                          <span className="w-3.5 h-3.5 border-2 border-black/30 border-t-black rounded-full animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Send message <Send size={14} />
+                        </>
+                      )}
+                    </button>
+                  </form>
+                </>
               )}
             </motion.div>
 
@@ -145,6 +169,20 @@ export default function ContactPage() {
                 >
                   <Mail size={14} />
                   vishalkirtaniyaofficial@gmail.com
+                </a>
+              </div>
+
+              {/* Phone */}
+              <div className="bg-[#0c0c14] border border-white/6 rounded-xl p-5">
+                <p className="text-xs text-gray-600 uppercase tracking-widest mb-3">
+                  Phone
+                </p>
+                <a
+                  href="tel:+918839054275"
+                  className="flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 transition-colors"
+                >
+                  <Phone size={14} />
+                  +91 88390 54275
                 </a>
               </div>
 

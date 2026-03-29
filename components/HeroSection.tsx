@@ -74,9 +74,8 @@ export default function HeroSection() {
           <motion.div variants={fadeUp} className="flex items-center gap-1">
             <span className="text-xs text-gray-600 mr-3">Find me on</span>
             {[
-              { icon: Github, href: "https://github.com", label: "GitHub" },
-              { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-              { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+              { icon: Github, href: "https://github.com/vishalkirtaniya", label: "GitHub" },
+              { icon: Linkedin, href: "https://linkedin.com/in/vishalkirtaniya", label: "LinkedIn" },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}

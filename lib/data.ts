@@ -11,7 +11,7 @@ export const projects = [
     live: "https://resume.vishalkirtaniya.in/",
     githubFrontend: "https://github.com/vishalkirtaniya/custom-resume-frontend",
     githubBackend: "https://github.com/vishalkirtaniya/custom-resume-backend",
-    featured: false,
+    featured: true,
     color: "#fb923c",
     details: {
       challenge:
@@ -101,7 +101,7 @@ export const projects = [
     role: "Quant Developer",
     live: "https://example.com",
     githubFrontend: "https://github.com/your-username/technical-analysis-frontend",
-    githubBackend: "https://github.com/vishalkirtaniya/technical-analysis-backend",
+    githubBackend: "https://github.com/vishalkirtaniya/technical-analysis",
     featured: true,
     color: "#a78bfa",
     details: {
