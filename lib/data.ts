@@ -1,5 +1,69 @@
 export const projects = [
   {
+    slug: "resume-autobot",
+    title: "Resume Autobot",
+    tagline: "AI-powered resume tailoring & PDF generation",
+    description:
+      "A Python CLI tool that parses job descriptions with spaCy NLP and auto-tailors a base resume, generating a polished PDF with ReportLab.",
+    tags: ["Python", "spaCy", "ReportLab", "NLP", "uv"],
+    year: "2026",
+    role: "Developer",
+    live: "https://resume.vishalkirtaniya.in/",
+    githubFrontend: "https://github.com/vishalkirtaniya/custom-resume-frontend",
+    githubBackend: "https://github.com/vishalkirtaniya/custom-resume-backend",
+    featured: false,
+    color: "#fb923c",
+    details: {
+      challenge:
+        "Resolving Python version compatibility between spaCy, pydantic v1, and modern uv tooling on Fedora 43.",
+      solution:
+        "Pinned a compatible Python environment using uv's virtual environments and resolved pydantic v1/v2 conflicts by isolating the spaCy pipeline.",
+      outcomes: [
+        "Generates tailored PDF in < 2s",
+        "CLI interface with argparse",
+        "Markdown-to-PDF pipeline with table support",
+        "Page-break logic for long resumes",
+      ],
+    },
+  },
+  {
+    slug: "cipher-chat",
+    title: "CipherChat",
+    tagline: "End-to-end encrypted messaging app with zero server storage",
+    description:
+      "A full-stack secure messaging application built from scratch using React Native (Expo) and a minimal Node.js WebSocket server. Messages are encrypted on-device using X25519 + XSalsa20 and never stored or readable on the server, ensuring true end-to-end privacy.",
+    tags: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Node.js",
+      "WebSocket",
+      "SQLite",
+      "Cryptography",
+      "Docker",
+    ],
+    year: "2026",
+    role: "App Developer",
+    live: "https://drive.google.com/file/d/1Rjmf2XIdt95SjxWswdvXqZL8CxVUTxWP/view?usp=drive_link",
+    githubFrontend: "https://github.com/vishalkirtaniya/cipher-chat-app",
+    githubBackend: "https://github.com/vishalkirtaniya/cipher-chat-backend",
+    featured: true,
+    color: "#60a5fa",
+    details: {
+      challenge:
+        "Designing a messaging system where the server never has access to plaintext messages required building encryption, key exchange, and message delivery logic entirely on the client while keeping real-time communication reliable.",
+      solution:
+        "Implemented end-to-end encryption using X25519 key exchange and XSalsa20-Poly1305 via tweetnacl. Built a lightweight WebSocket signaling server that only routes ciphertext and maintains in-memory state for connections and offline queues, with no database or message storage.",
+      outcomes: [
+        "True end-to-end encryption with zero plaintext exposure on server",
+        "Real-time messaging with delivery receipts and typing indicators",
+        "Offline message queuing with automatic delivery on reconnect",
+        "Secure local storage using SQLite with encrypted payloads",
+        "Minimal backend (~200 lines) with no database and reduced attack surface",
+      ],
+    },
+  },
+  {
     slug: "ecommerce-platform",
     title: "E-Commerce Platform",
     tagline: "Full-stack shopping experience with real-time inventory",
@@ -77,33 +141,6 @@ export const projects = [
         "Fully accessible with ARIA landmarks",
         "< 3s load on 3G with Next.js image optimization",
         "Zero layout shift (CLS = 0)",
-      ],
-    },
-  },
-  {
-    slug: "resume-autobot",
-    title: "Resume Autobot",
-    tagline: "AI-powered resume tailoring & PDF generation",
-    description:
-      "A Python CLI tool that parses job descriptions with spaCy NLP and auto-tailors a base resume, generating a polished PDF with ReportLab.",
-    tags: ["Python", "spaCy", "ReportLab", "NLP", "uv"],
-    year: "2026",
-    role: "Developer",
-    live: "https://resume.vishalkirtaniya.in/",
-    githubFrontend: "https://github.com/vishalkirtaniya/custom-resume-frontend",
-    githubBackend: "https://github.com/vishalkirtaniya/custom-resume-backend",
-    featured: false,
-    color: "#fb923c",
-    details: {
-      challenge:
-        "Resolving Python version compatibility between spaCy, pydantic v1, and modern uv tooling on Fedora 43.",
-      solution:
-        "Pinned a compatible Python environment using uv's virtual environments and resolved pydantic v1/v2 conflicts by isolating the spaCy pipeline.",
-      outcomes: [
-        "Generates tailored PDF in < 2s",
-        "CLI interface with argparse",
-        "Markdown-to-PDF pipeline with table support",
-        "Page-break logic for long resumes",
       ],
     },
   },
