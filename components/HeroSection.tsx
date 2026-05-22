@@ -76,6 +76,7 @@ export default function HeroSection() {
             {[
               { icon: Github, href: "https://github.com/vishalkirtaniya", label: "GitHub" },
               { icon: Linkedin, href: "https://linkedin.com/in/vishalkirtaniya", label: "LinkedIn" },
+              { icon: Twitter, href: "https://x.com/Vishaladitya001", label: "Twitter" },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}

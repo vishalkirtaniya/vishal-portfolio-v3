@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Download } from "lucide-react";
 import { fadeUp, stagger, fadeIn } from "@/lib/motion";
+import Certifications from "@/components/Certificates";
 import Footer from "@/components/Footer";
 
 const timeline = [
@@ -39,7 +40,8 @@ export default function AboutPage() {
     <>
       <section className="pt-32 pb-24 max-w-5xl mx-auto px-6">
         <motion.div variants={stagger} initial="hidden" animate="visible">
-          {/* Header */}
+
+          {/* ── Header ── */}
           <motion.div variants={fadeUp} className="mb-20">
             <p className="text-xs text-cyan-400 font-medium tracking-widest uppercase mb-4">
               About
@@ -51,9 +53,8 @@ export default function AboutPage() {
             </h1>
           </motion.div>
 
-          {/* Main content */}
+          {/* ── Bio + sidebar ── */}
           <div className="grid md:grid-cols-[1fr_340px] gap-16 mb-24">
-            {/* Bio */}
             <motion.div variants={fadeUp} className="space-y-5">
               <p className="text-gray-300 text-lg leading-relaxed">
                 Hey — I'm <span className="text-white font-medium">Vishal</span>
@@ -98,9 +99,7 @@ export default function AboutPage() {
               </div>
             </motion.div>
 
-            {/* Right side card */}
             <motion.div variants={fadeIn} className="space-y-4">
-              {/* Quick facts */}
               <div className="bg-[#0c0c14] border border-white/6 rounded-xl p-6 space-y-4">
                 <h3 className="text-xs font-medium text-gray-600 uppercase tracking-widest">
                   Quick facts
@@ -112,19 +111,13 @@ export default function AboutPage() {
                   { label: "OS", value: "Fedora 43 Linux" },
                   { label: "Status", value: "Open to work ✓" },
                 ].map(({ label, value }) => (
-                  <div
-                    key={label}
-                    className="flex items-center justify-between"
-                  >
+                  <div key={label} className="flex items-center justify-between">
                     <span className="text-xs text-gray-600">{label}</span>
-                    <span className="text-xs text-gray-300 font-medium">
-                      {value}
-                    </span>
+                    <span className="text-xs text-gray-300 font-medium">{value}</span>
                   </div>
                 ))}
               </div>
 
-              {/* Currently */}
               <div className="bg-[#0c0c14] border border-white/6 rounded-xl p-6">
                 <h3 className="text-xs font-medium text-gray-600 uppercase tracking-widest mb-4">
                   Currently
@@ -138,9 +131,7 @@ export default function AboutPage() {
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2">
                       <span className="w-1 h-1 rounded-full bg-cyan-400 mt-2 flex-shrink-0" />
-                      <span className="text-xs text-gray-400 leading-relaxed">
-                        {item}
-                      </span>
+                      <span className="text-xs text-gray-400 leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -148,7 +139,10 @@ export default function AboutPage() {
             </motion.div>
           </div>
 
-          {/* Timeline */}
+          {/* ── Certifications ── */}
+          <Certifications />
+
+          {/* ── Timeline ── */}
           <motion.div
             variants={stagger}
             initial="hidden"
@@ -162,9 +156,7 @@ export default function AboutPage() {
               Journey
             </motion.h2>
             <div className="relative">
-              {/* Vertical line */}
               <div className="absolute left-[84px] top-0 bottom-0 w-px bg-white/6 hidden sm:block" />
-
               <div className="space-y-8">
                 {timeline.map((item, i) => (
                   <motion.div
@@ -179,22 +171,21 @@ export default function AboutPage() {
                       </span>
                     </div>
                     <div className="relative sm:pl-8">
-                      {/* dot */}
                       <div className="absolute left-[-5px] top-1 w-2.5 h-2.5 rounded-full border-2 border-cyan-400/40 bg-[#050508] hidden sm:block" />
                       <h3 className="font-display text-base font-700 text-white mb-1.5">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-gray-500 leading-relaxed">
-                        {item.desc}
-                      </p>
+                      <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
                     </div>
                   </motion.div>
                 ))}
               </div>
             </div>
           </motion.div>
+
         </motion.div>
       </section>
+
       <Footer />
     </>
   );

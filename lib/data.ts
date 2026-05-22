@@ -165,7 +165,7 @@ export const skills = [
   },
   {
     category: "Quantitative",
-    items: ["Backtrader", "Dhan SDK", "Numpy"],
+    items: ["Backtrader", "Dhan SDK", "Numpy", "Pandas"],
   },
   {
     category: "Learning",
