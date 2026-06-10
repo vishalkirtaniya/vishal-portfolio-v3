@@ -17,6 +17,7 @@ export default function Footer() {
             { icon: Github, href: "https://github.com/vishalkirtaniya", label: "GitHub" },
             { icon: Linkedin, href: "https://www.linkedin.com/in/vishalkirtaniya/", label: "LinkedIn" },
             { icon: Mail, href: "mailto:vishalkirtaniyaofficial@gmail.com", label: "Email" },
+            { icon: Twitter, href: "https://x.com/Vishaladitya001", label: "Twitter" },
           ].map(({ icon: Icon, href, label }) => (
             <Link
               key={label}

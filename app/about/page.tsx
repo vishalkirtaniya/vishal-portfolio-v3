@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Download } from "lucide-react";
 import { fadeUp, stagger, fadeIn } from "@/lib/motion";
+import Certifications from "@/components/Certificates";
 import Footer from "@/components/Footer";
 
 const timeline = [
@@ -13,9 +14,22 @@ const timeline = [
     desc: "Actively learning ML, data science, and AI while exploring what's next. Open to roles where I can build meaningful things at the intersection of software engineering and intelligent systems.",
   },
   {
-    year: "2026",
-    title: "Back to Fundamentals",
-    desc: "Started a new chapter — diving deep into machine learning, artificial intelligence, and the mathematical foundations of computing. Rebuilding from first principles with a clearer sense of direction.",
+    year: "June 2026",
+    title: "The Ultimate Job Ready Data Science Course",
+    org: "Code with Harry",
+    desc: "Comprehensive data science training covering Python, pandas, NumPy, data visualization, machine learning, and end-to-end project workflows.",
+  },
+  {
+    year: "May 2026",
+    title: "CS50's Introduction to Databases with SQL",
+    org: "Harvard / edX",
+    desc: "Rigorous introduction to database design, relational modeling, and SQL — covering queries, schemas, indexes, and transactions via Harvard's CS50 curriculum.",
+  },
+  {
+    year: "April 2026",
+    title: "CS50's Introduction to Programming with Python",
+    org: "Harvard / edX",
+    desc: "Harvard's CS50P — functions, file I/O, OOP, libraries, and unit testing through Python, grounded in CS fundamentals.",
   },
   {
     year: "2024",
@@ -39,7 +53,7 @@ export default function AboutPage() {
     <>
       <section className="pt-32 pb-24 max-w-5xl mx-auto px-6">
         <motion.div variants={stagger} initial="hidden" animate="visible">
-          {/* Header */}
+          {/* ── Header ── */}
           <motion.div variants={fadeUp} className="mb-20">
             <p className="text-xs text-cyan-400 font-medium tracking-widest uppercase mb-4">
               About
@@ -51,31 +65,32 @@ export default function AboutPage() {
             </h1>
           </motion.div>
 
-          {/* Main content */}
+          {/* ── Bio + sidebar ── */}
           <div className="grid md:grid-cols-[1fr_340px] gap-16 mb-24">
-            {/* Bio */}
             <motion.div variants={fadeUp} className="space-y-5">
               <p className="text-gray-300 text-lg leading-relaxed">
-                Hey — I'm{" "}
-                <span className="text-white font-medium">Vishal</span>, a full-stack developer
-                with ~2 years of experience turning ideas into clean, fast web products. I
-                work across the entire stack — from pixel-precise React interfaces to
-                battle-tested Fastify backends.
+                Hey — I'm <span className="text-white font-medium">Vishal</span>
+                , a full-stack developer with ~2 years of experience turning
+                ideas into clean, fast web products. I work across the entire
+                stack — from pixel-precise React interfaces to battle-tested
+                Fastify backends.
               </p>
               <p className="text-gray-400 leading-relaxed">
-                My day usually involves building features, untangling database performance issues,
-                or obsessing over animation curves. On the side, I've been building an algorithmic
-                trading system with Python — a deep dive into quant finance, parallel computing,
-                and statistical analysis.
+                My day usually involves building features, untangling database
+                performance issues, or obsessing over animation curves. On the
+                side, I've been building an algorithmic trading system with
+                Python — a deep dive into quant finance, parallel computing, and
+                statistical analysis.
               </p>
               <p className="text-gray-400 leading-relaxed">
-                Right now I'm actively pursuing machine learning as my next frontier, with an eye
-                on using ML to enhance both web products and trading systems.
+                Right now I'm actively pursuing machine learning as my next
+                frontier, with an eye on using ML to enhance both web products
+                and trading systems.
               </p>
               <p className="text-gray-400 leading-relaxed">
-                When I'm not coding, I'm lifting weights, running, or exploring new tools on
-                my Fedora Linux setup. I believe great software is equal parts craft and
-                engineering — the details matter.
+                When I'm not coding, I'm lifting weights, running, or exploring
+                new tools on my Fedora Linux setup. I believe great software is
+                equal parts craft and engineering — the details matter.
               </p>
 
               <div className="pt-4 flex flex-wrap gap-3">
@@ -86,7 +101,9 @@ export default function AboutPage() {
                   Get in touch <ArrowRight size={14} />
                 </Link>
                 <a
-                  href="/resume.pdf"
+                  href="https://drive.google.com/file/d/1m-mN4X9oBXrIzi1FCj9gi0VPCq9riXKc/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-medium text-gray-300 border border-white/10 px-5 py-2.5 rounded-full hover:border-white/20 hover:text-white transition-colors"
                 >
                   <Download size={14} /> Resume
@@ -94,9 +111,7 @@ export default function AboutPage() {
               </div>
             </motion.div>
 
-            {/* Right side card */}
             <motion.div variants={fadeIn} className="space-y-4">
-              {/* Quick facts */}
               <div className="bg-[#0c0c14] border border-white/6 rounded-xl p-6 space-y-4">
                 <h3 className="text-xs font-medium text-gray-600 uppercase tracking-widest">
                   Quick facts
@@ -108,14 +123,18 @@ export default function AboutPage() {
                   { label: "OS", value: "Fedora 43 Linux" },
                   { label: "Status", value: "Open to work ✓" },
                 ].map(({ label, value }) => (
-                  <div key={label} className="flex items-center justify-between">
+                  <div
+                    key={label}
+                    className="flex items-center justify-between"
+                  >
                     <span className="text-xs text-gray-600">{label}</span>
-                    <span className="text-xs text-gray-300 font-medium">{value}</span>
+                    <span className="text-xs text-gray-300 font-medium">
+                      {value}
+                    </span>
                   </div>
                 ))}
               </div>
 
-              {/* Currently */}
               <div className="bg-[#0c0c14] border border-white/6 rounded-xl p-6">
                 <h3 className="text-xs font-medium text-gray-600 uppercase tracking-widest mb-4">
                   Currently
@@ -129,7 +148,9 @@ export default function AboutPage() {
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2">
                       <span className="w-1 h-1 rounded-full bg-cyan-400 mt-2 flex-shrink-0" />
-                      <span className="text-xs text-gray-400 leading-relaxed">{item}</span>
+                      <span className="text-xs text-gray-400 leading-relaxed">
+                        {item}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -137,8 +158,16 @@ export default function AboutPage() {
             </motion.div>
           </div>
 
-          {/* Timeline */}
-          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          {/* ── Certifications ── */}
+          <Certifications />
+
+          {/* ── Timeline ── */}
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             <motion.h2
               variants={fadeUp}
               className="font-display text-2xl md:text-3xl font-700 text-white mb-10"
@@ -146,9 +175,7 @@ export default function AboutPage() {
               Journey
             </motion.h2>
             <div className="relative">
-              {/* Vertical line */}
               <div className="absolute left-[84px] top-0 bottom-0 w-px bg-white/6 hidden sm:block" />
-
               <div className="space-y-8">
                 {timeline.map((item, i) => (
                   <motion.div
@@ -163,12 +190,13 @@ export default function AboutPage() {
                       </span>
                     </div>
                     <div className="relative sm:pl-8">
-                      {/* dot */}
                       <div className="absolute left-[-5px] top-1 w-2.5 h-2.5 rounded-full border-2 border-cyan-400/40 bg-[#050508] hidden sm:block" />
                       <h3 className="font-display text-base font-700 text-white mb-1.5">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+                      <p className="text-sm text-gray-500 leading-relaxed">
+                        {item.desc}
+                      </p>
                     </div>
                   </motion.div>
                 ))}
@@ -177,6 +205,7 @@ export default function AboutPage() {
           </motion.div>
         </motion.div>
       </section>
+
       <Footer />
     </>
   );
