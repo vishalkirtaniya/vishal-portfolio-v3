@@ -4,8 +4,62 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
 import { fadeUp, stagger } from "@/lib/motion";
+import { useEffect, useState } from "react";
+
+const TITLES = ["Data Scientist", "Data Analyst", "Full Stack Dev"];
+
+function useTypewriter(
+  words: string[],
+  typingSpeed = 80,
+  deletingSpeed = 50,
+  pauseMs = 1800,
+) {
+  const [displayed, setDisplayed] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [phase, setPhase] = useState<"typing" | "pausing" | "deleting">(
+    "typing",
+  );
+
+  useEffect(() => {
+    const current = words[wordIndex];
+
+    if (phase === "typing") {
+      if (displayed.length < current.length) {
+        const t = setTimeout(
+          () => setDisplayed(current.slice(0, displayed.length + 1)),
+          typingSpeed,
+        );
+        return () => clearTimeout(t);
+      } else {
+        const t = setTimeout(() => setPhase("pausing"), pauseMs);
+        return () => clearTimeout(t);
+      }
+    }
+
+    if (phase === "pausing") {
+      setPhase("deleting");
+    }
+
+    if (phase === "deleting") {
+      if (displayed.length > 0) {
+        const t = setTimeout(
+          () => setDisplayed(displayed.slice(0, -1)),
+          deletingSpeed,
+        );
+        return () => clearTimeout(t);
+      } else {
+        setWordIndex((i) => (i + 1) % words.length);
+        setPhase("typing");
+      }
+    }
+  }, [displayed, phase, wordIndex, words, typingSpeed, deletingSpeed, pauseMs]);
+
+  return displayed;
+}
 
 export default function HeroSection() {
+  const typedTitle = useTypewriter(TITLES);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden grid-bg">
       {/* Ambient glow */}
@@ -32,10 +86,12 @@ export default function HeroSection() {
             variants={fadeUp}
             className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-800 leading-[0.95] tracking-tight text-white mb-6"
           >
-            Full Stack
-            <br />
-            <span className="text-cyan-400 glow-text">Developer</span>
-            <br />
+            {/* Typewriter line — fixed height so layout doesn't shift */}
+            <span className="block min-h-[1.1em]">
+              <span className="text-cyan-400 glow-text">{typedTitle}</span>
+              {/* blinking cursor */}
+              <span className="inline-block w-[3px] ml-1 align-middle bg-cyan-400 animate-[blink_1s_step-end_infinite] h-[0.85em] rounded-sm" />
+            </span>
             <span className="text-gray-500">& Builder.</span>
           </motion.h1>
 
@@ -44,14 +100,18 @@ export default function HeroSection() {
             variants={fadeUp}
             className="text-gray-400 text-lg sm:text-xl max-w-2xl leading-relaxed mb-10"
           >
-            I craft clean, performant web applications — from elegant React interfaces to
-            battle-tested backend systems. Currently exploring the intersection of{" "}
+            I craft clean, performant web applications — from elegant React
+            interfaces to battle-tested backend systems. Currently exploring the
+            intersection of{" "}
             <span className="text-gray-200">full-stack development</span> and{" "}
             <span className="text-gray-200">algorithmic trading</span>.
           </motion.p>
 
           {/* CTAs */}
-          <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4 mb-16">
+          <motion.div
+            variants={fadeUp}
+            className="flex flex-wrap items-center gap-4 mb-16"
+          >
             <Link
               href="/work"
               className="group inline-flex items-center gap-2 bg-cyan-400 text-black text-sm font-semibold px-6 py-3 rounded-full hover:bg-cyan-300 transition-colors duration-200"
@@ -74,9 +134,21 @@ export default function HeroSection() {
           <motion.div variants={fadeUp} className="flex items-center gap-1">
             <span className="text-xs text-gray-600 mr-3">Find me on</span>
             {[
-              { icon: Github, href: "https://github.com/vishalkirtaniya", label: "GitHub" },
-              { icon: Linkedin, href: "https://linkedin.com/in/vishalkirtaniya", label: "LinkedIn" },
-              { icon: Twitter, href: "https://x.com/Vishaladitya001", label: "Twitter" },
+              {
+                icon: Github,
+                href: "https://github.com/vishalkirtaniya",
+                label: "GitHub",
+              },
+              {
+                icon: Linkedin,
+                href: "https://linkedin.com/in/vishalkirtaniya",
+                label: "LinkedIn",
+              },
+              {
+                icon: Twitter,
+                href: "https://x.com/Vishaladitya001",
+                label: "Twitter",
+              },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}

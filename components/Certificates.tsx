@@ -23,6 +23,25 @@ export interface Cert {
 
 const certifications: Cert[] = [
   {
+    id: "cert-4",
+    title: "The Ultimate Job Ready Data Science Course",
+    issuer: "Code with Harry",
+    issued: "June 2026",
+    credentialId: "CWH-THE-ULTIMATE-JOB-READY-DATA-SCIENCE-COURSE-PGIYU2G3",
+    verifyUrl:
+      "https://drive.google.com/file/d/1E17Fkc5kDir2Ll4sXcuKYi-fbHY75rT4/view?usp=sharing",
+    image: "/certs/data_science.png",
+    tags: [
+      "Python",
+      "Pandas",
+      "Numpy",
+      "Jupyter",
+      "Google Collab",
+      "Model training",
+      "deep learning",
+    ],
+  },
+  {
     id: "cert-1",
     title: "CS50's Introduction to Databases with SQL",
     issuer: "Harvard University",
@@ -59,7 +78,13 @@ const certifications: Cert[] = [
 
 // ─── Modal ────────────────────────────────────────────────────────────────────
 
-export function CertModal({ cert, onClose }: { cert: Cert; onClose: () => void }) {
+export function CertModal({
+  cert,
+  onClose,
+}: {
+  cert: Cert;
+  onClose: () => void;
+}) {
   const [imgError, setImgError] = useState(false);
 
   return (
@@ -133,7 +158,10 @@ export function CertModal({ cert, onClose }: { cert: Cert; onClose: () => void }
             </div>
 
             <div className="flex items-center gap-2 mb-5 bg-white/[0.03] border border-white/6 rounded-lg px-3.5 py-2.5">
-              <ShieldCheck size={13} className="text-cyan-400/60 flex-shrink-0" />
+              <ShieldCheck
+                size={13}
+                className="text-cyan-400/60 flex-shrink-0"
+              />
               <span className="text-[10px] text-gray-600 uppercase tracking-widest flex-shrink-0">
                 ID
               </span>
@@ -175,7 +203,13 @@ export function CertModal({ cert, onClose }: { cert: Cert; onClose: () => void }
 
 // ─── Card ─────────────────────────────────────────────────────────────────────
 
-export function CertCard({ cert, onClick }: { cert: Cert; onClick: () => void }) {
+export function CertCard({
+  cert,
+  onClick,
+}: {
+  cert: Cert;
+  onClick: () => void;
+}) {
   return (
     <motion.button
       variants={fadeUp}
@@ -191,7 +225,9 @@ export function CertCard({ cert, onClick }: { cert: Cert; onClick: () => void })
         <div className="w-8 h-8 rounded-lg bg-cyan-400/8 border border-cyan-400/15 flex items-center justify-center">
           <Award size={15} className="text-cyan-400" />
         </div>
-        <span className="text-[10px] text-gray-700 font-medium">{cert.issued}</span>
+        <span className="text-[10px] text-gray-700 font-medium">
+          {cert.issued}
+        </span>
       </div>
 
       <h3 className="font-display text-sm font-700 text-white leading-snug mb-1 group-hover:text-cyan-50 transition-colors">

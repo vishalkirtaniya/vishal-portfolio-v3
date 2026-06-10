@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, Linkedin, Github, Phone, CheckCircle } from "lucide-react";
+import { Send, Mail, Linkedin, Github, Twitter, Phone, CheckCircle } from "lucide-react";
 import { fadeUp, stagger } from "@/lib/motion";
 import Footer from "@/components/Footer";
 
@@ -204,6 +204,12 @@ export default function ContactPage() {
                       label: "LinkedIn",
                       handle: "vishalkirtaniya",
                       href: "https://linkedin.com/in/vishalkirtaniya",
+                    },
+                    {
+                      icon: Twitter,
+                      label: "Twitter",
+                      handle: "vishaladitya001",
+                      href: "https://x.com/Vishaladitya001",
                     },
                   ].map(({ icon: Icon, label, handle, href }) => (
                     <a

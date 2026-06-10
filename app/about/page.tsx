@@ -14,9 +14,22 @@ const timeline = [
     desc: "Actively learning ML, data science, and AI while exploring what's next. Open to roles where I can build meaningful things at the intersection of software engineering and intelligent systems.",
   },
   {
-    year: "2026",
-    title: "Back to Fundamentals",
-    desc: "Started a new chapter — diving deep into machine learning, artificial intelligence, and the mathematical foundations of computing. Rebuilding from first principles with a clearer sense of direction.",
+    year: "June 2026",
+    title: "The Ultimate Job Ready Data Science Course",
+    org: "Code with Harry",
+    desc: "Comprehensive data science training covering Python, pandas, NumPy, data visualization, machine learning, and end-to-end project workflows.",
+  },
+  {
+    year: "May 2026",
+    title: "CS50's Introduction to Databases with SQL",
+    org: "Harvard / edX",
+    desc: "Rigorous introduction to database design, relational modeling, and SQL — covering queries, schemas, indexes, and transactions via Harvard's CS50 curriculum.",
+  },
+  {
+    year: "April 2026",
+    title: "CS50's Introduction to Programming with Python",
+    org: "Harvard / edX",
+    desc: "Harvard's CS50P — functions, file I/O, OOP, libraries, and unit testing through Python, grounded in CS fundamentals.",
   },
   {
     year: "2024",
@@ -40,7 +53,6 @@ export default function AboutPage() {
     <>
       <section className="pt-32 pb-24 max-w-5xl mx-auto px-6">
         <motion.div variants={stagger} initial="hidden" animate="visible">
-
           {/* ── Header ── */}
           <motion.div variants={fadeUp} className="mb-20">
             <p className="text-xs text-cyan-400 font-medium tracking-widest uppercase mb-4">
@@ -111,9 +123,14 @@ export default function AboutPage() {
                   { label: "OS", value: "Fedora 43 Linux" },
                   { label: "Status", value: "Open to work ✓" },
                 ].map(({ label, value }) => (
-                  <div key={label} className="flex items-center justify-between">
+                  <div
+                    key={label}
+                    className="flex items-center justify-between"
+                  >
                     <span className="text-xs text-gray-600">{label}</span>
-                    <span className="text-xs text-gray-300 font-medium">{value}</span>
+                    <span className="text-xs text-gray-300 font-medium">
+                      {value}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -131,7 +148,9 @@ export default function AboutPage() {
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2">
                       <span className="w-1 h-1 rounded-full bg-cyan-400 mt-2 flex-shrink-0" />
-                      <span className="text-xs text-gray-400 leading-relaxed">{item}</span>
+                      <span className="text-xs text-gray-400 leading-relaxed">
+                        {item}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -175,14 +194,15 @@ export default function AboutPage() {
                       <h3 className="font-display text-base font-700 text-white mb-1.5">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+                      <p className="text-sm text-gray-500 leading-relaxed">
+                        {item.desc}
+                      </p>
                     </div>
                   </motion.div>
                 ))}
               </div>
             </div>
           </motion.div>
-
         </motion.div>
       </section>
 
