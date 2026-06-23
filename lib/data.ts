@@ -1,5 +1,33 @@
 export const projects = [
   {
+    slug: "ecom-data-analysis",
+    title: "E-Commerce Sales & Revenue Analytics",
+    tagline: "Uncovering retention gaps and regional revenue patterns in 120K+ transactions",
+    description:
+      "Analyzed 120K+ rows of Brazilian e-commerce data (Olist dataset) across multiple CSVs, migrated to SQLite for relational querying, and built an interactive Streamlit dashboard to surface actionable business insights.",
+    tags: ["Python", "Pandas", "SQLite", "SQL", "Streamlit", "NumPy"],
+    year: "2026",
+    role: "Data Analyst",
+    live: "",
+    githubFrontend: "",
+    githubBackend: "https://github.com/vishalkirtaniya/e-com-data-analysis",
+    featured: true,
+    color: "#f472b6",
+    details: {
+      challenge:
+        "Raw data was spread across 8 separate CSVs with no relational structure, making cross-table analysis slow and error-prone with pure Pandas.",
+      solution:
+        "Migrated all CSVs into a normalized SQLite database, enabling efficient multi-table SQL joins and aggregations that would have been impractical in-memory.",
+      outcomes: [
+        "Found repeat buyers (3% of customers) generate 2× cumulative revenue — signaling a retention gap",
+        "Identified repeat buyers spend 9% less per order, ruling out purchase-value as the growth lever",
+        "Mapped revenue across 27 states; São Paulo led at $5.7M total revenue",
+        "Surfaced Northeastern states yield 85% higher revenue-per-customer ($273 vs $147)",
+        "Built Streamlit dashboard with 5+ interactive views — segmentation, delivery performance, order distribution, and geo-revenue concentration",
+      ],
+    },
+  },
+  {
     slug: "resume-autobot",
     title: "Resume Autobot",
     tagline: "AI-powered resume tailoring & PDF generation",
@@ -47,7 +75,7 @@ export const projects = [
     live: "https://drive.google.com/file/d/1Rjmf2XIdt95SjxWswdvXqZL8CxVUTxWP/view?usp=drive_link",
     githubFrontend: "https://github.com/vishalkirtaniya/cipher-chat-app",
     githubBackend: "https://github.com/vishalkirtaniya/cipher-chat-backend",
-    featured: true,
+    featured: false,
     color: "#60a5fa",
     details: {
       challenge:

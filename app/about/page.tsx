@@ -101,8 +101,7 @@ export default function AboutPage() {
                   Get in touch <ArrowRight size={14} />
                 </Link>
                 <a
-                  href="https://drive.google.com/file/d/1m-mN4X9oBXrIzi1FCj9gi0VPCq9riXKc/view?usp=sharing"
-                  target="_blank"
+                  href="https://drive.google.com/file/d/1ull5g95PUof-yuD9jFgYI2--ECjOMrxw/view?usp=sharing"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-medium text-gray-300 border border-white/10 px-5 py-2.5 rounded-full hover:border-white/20 hover:text-white transition-colors"
                 >
