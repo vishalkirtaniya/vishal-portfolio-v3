@@ -116,6 +116,25 @@ export default function FeaturedWork() {
               </div>
             </motion.div>
           ))}
+          {/* Placeholder for upcoming projects — delete once you have a 4th featured project */}
+          {featured.length % 2 === 1 && (
+            <motion.div
+              variants={scaleIn}
+              custom={featured.length}
+              className="relative flex flex-col justify-center rounded-2xl border border-dashed border-white/10 p-7 md:p-8"
+            >
+              <p className="text-[10px] font-medium text-cyan-400 tracking-widest uppercase mb-3">
+                In progress
+              </p>
+              <h3 className="font-display text-xl md:text-2xl font-700 text-gray-300 mb-2">
+                More data projects coming
+              </h3>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Machine learning, forecasting and end-to-end analytics projects
+                are being added here — follow along on GitHub.
+              </p>
+            </motion.div>
+          )}
         </div>
 
         {/* Mobile "all projects" */}

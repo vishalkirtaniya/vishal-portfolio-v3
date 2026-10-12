@@ -59,8 +59,8 @@ export default function ContactPage() {
               <span className="text-gray-500">something together.</span>
             </h1>
             <p className="text-gray-400 text-lg leading-relaxed">
-              Open for full-time roles, freelance projects, and interesting
-              collaborations. Drop me a message — I typically respond within 24
+              Hiring for a data scientist or analyst role? Have a dataset that
+              needs answers? Drop me a message — I typically respond within 24
               hours.
             </p>
           </motion.div>
@@ -238,12 +238,12 @@ export default function ContactPage() {
                 <div className="flex items-center gap-2 mb-2">
                   <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
                   <span className="text-xs font-medium text-cyan-400">
-                    Available for work
+                    Available for data roles
                   </span>
                 </div>
                 <p className="text-xs text-gray-500 leading-relaxed">
-                  Open to full-time roles, contract work, and interesting side
-                  projects.
+                  Open to data science and analytics roles, internships, and
+                  data-focused contract work.
                 </p>
               </div>
             </motion.div>

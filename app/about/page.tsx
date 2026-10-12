@@ -10,8 +10,8 @@ import Footer from "@/components/Footer";
 const timeline = [
   {
     year: "Now",
-    title: "Exploring AI & New Opportunities",
-    desc: "Actively learning ML, data science, and AI while exploring what's next. Open to roles where I can build meaningful things at the intersection of software engineering and intelligent systems.",
+    title: "Building a Data Science Career",
+    desc: "Applying Python, SQL and machine learning to real datasets, publishing projects as proof of work, and looking for a data scientist or analyst role where engineering rigor and analytical thinking both count.",
   },
   {
     year: "June 2026",
@@ -59,38 +59,39 @@ export default function AboutPage() {
               About
             </p>
             <h1 className="font-display text-4xl md:text-6xl font-800 text-white leading-tight mb-6">
-              The person behind
+              The analyst behind
               <br />
-              <span className="text-gray-500">the keyboard.</span>
+              <span className="text-gray-500">the numbers.</span>
             </h1>
           </motion.div>
 
           {/* ── Bio + sidebar ── */}
           <div className="grid md:grid-cols-[1fr_340px] gap-16 mb-24">
             <motion.div variants={fadeUp} className="space-y-5">
-              <p className="text-gray-300 text-lg leading-relaxed">
+                            <p className="text-gray-300 text-lg leading-relaxed">
                 Hey — I'm <span className="text-white font-medium">Vishal</span>
-                , a full-stack developer with ~2 years of experience turning
-                ideas into clean, fast web products. I work across the entire
-                stack — from pixel-precise React interfaces to battle-tested
-                Fastify backends.
+                , a data scientist and analyst who turns messy data into clear
+                decisions. I work in <span className="text-white">Python</span>{" "}
+                and <span className="text-white">SQL</span>, and I care as much
+                about the question being asked as the model answering it.
               </p>
               <p className="text-gray-400 leading-relaxed">
-                My day usually involves building features, untangling database
-                performance issues, or obsessing over animation curves. On the
-                side, I've been building an algorithmic trading system with
-                Python — a deep dive into quant finance, parallel computing, and
-                statistical analysis.
+                My recent work includes analysing 120K+ e-commerce transactions
+                to find a retention gap hiding in the revenue numbers, building
+                a Streamlit dashboard for stakeholders, and backtesting
+                trading strategies with parallelised parameter search ranked by
+                Sharpe ratio and drawdown.
               </p>
               <p className="text-gray-400 leading-relaxed">
-                Right now I'm actively pursuing machine learning as my next
-                frontier, with an eye on using ML to enhance both web products
-                and trading systems.
+                Before pivoting to data, I spent about two years as a full-stack
+                developer shipping production software. That means I write
+                maintainable code, design sensible schemas, and can take an
+                analysis from a notebook to something deployed and usable.
               </p>
               <p className="text-gray-400 leading-relaxed">
-                When I'm not coding, I'm lifting weights, running, or exploring
-                new tools on my Fedora Linux setup. I believe great software is
-                equal parts craft and engineering — the details matter.
+                I'm now going deeper into machine learning — scikit-learn,
+                PyTorch and model evaluation. Outside work I lift, run, and
+                tinker with my Fedora Linux setup.
               </p>
 
               <div className="pt-4 flex flex-wrap gap-3">
@@ -117,9 +118,9 @@ export default function AboutPage() {
                 </h3>
                 {[
                   { label: "Based in", value: "India 🇮🇳" },
-                  { label: "Experience", value: "~2 years" },
-                  { label: "Focus", value: "Full Stack + ML" },
-                  { label: "OS", value: "Fedora 43 Linux" },
+                  { label: "Experience", value: "~2 years engineering" },
+                  { label: "Focus", value: "Data Science + ML" },
+                  { label: "OS", value: "Linux" },
                   { label: "Status", value: "Open to work ✓" },
                 ].map(({ label, value }) => (
                   <div
@@ -140,10 +141,10 @@ export default function AboutPage() {
                 </h3>
                 <ul className="space-y-2.5">
                   {[
-                    "Building e-commerce platform",
-                    "Learning PyTorch & ML",
-                    "Refining algo trading system",
-                    "Looking for full-stack roles",
+                    "Deepening ML: scikit-learn & PyTorch",
+                    "Adding new data projects to this site",
+                    "Refining quantitative backtesting system",
+                    "Looking for data scientist / analyst roles",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2">
                       <span className="w-1 h-1 rounded-full bg-cyan-400 mt-2 flex-shrink-0" />

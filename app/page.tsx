@@ -9,10 +9,10 @@ export default function Home() {
     <>
       <HeroSection />
       <FeaturedWork />
-      <section className="py-24 md:py-32 max-w-6xl mx-auto px-6">
+      <SkillsSection />
+      <section className="py-24 md:py-32 max-w-6xl mx-auto px-6 border-t border-white/5">
         <Certifications />
       </section>
-      <SkillsSection />
       <Footer />
     </>
   );

@@ -1,6 +1,7 @@
 export const projects = [
   {
     slug: "ecom-data-analysis",
+    category: "Data Science",
     title: "E-Commerce Sales & Revenue Analytics",
     tagline: "Uncovering retention gaps and regional revenue patterns in 120K+ transactions",
     description:
@@ -28,14 +29,43 @@ export const projects = [
     },
   },
   {
+    slug: "algo-trading",
+    category: "Data Science",
+    title: "Algorithmic Trading System",
+    tagline: "Statistical backtesting & parameter optimization on market data",
+    description:
+      "A Backtrader-based system for backtesting MACD and Bollinger Band strategies with parameter optimization via permutations, ranked by Sharpe ratio, max drawdown, win rate, and IRR.",
+    tags: ["Python", "Pandas", "NumPy", "Backtrader", "PostgreSQL", "Multiprocessing"],
+    role: "Quant Data Scientist",
+    year: "2025",
+    live: "https://example.com",
+    githubFrontend: "https://github.com/your-username/technical-analysis-frontend",
+    githubBackend: "https://github.com/vishalkirtaniya/technical-analysis",
+    featured: true,
+    color: "#a78bfa",
+    details: {
+      challenge:
+        "Parameter space for strategy optimization is exponentially large. Brute-force evaluation across all combinations was too slow for iterative development.",
+      solution:
+        "Parallelized parameter evaluation using ProcessPoolExecutor across CPU cores. Results are ranked by composite score and persisted for paper trading.",
+      outcomes: [
+        "10x faster optimization vs. single-threaded",
+        "Live paper trading via Dhan SDK",
+        "Exchange-accurate commission & tax models",
+        "Automated best-parameter promotion to live",
+      ],
+    },
+  },
+  {
     slug: "resume-autobot",
+    category: "Data Science",
     title: "Resume Autobot",
-    tagline: "AI-powered resume tailoring & PDF generation",
+    tagline: "NLP pipeline that extracts keywords from job descriptions and tailors a resume",
+    role: "NLP / Python Developer",
     description:
       "A Python CLI tool that parses job descriptions with spaCy NLP and auto-tailors a base resume, generating a polished PDF with ReportLab.",
     tags: ["Python", "spaCy", "ReportLab", "NLP", "uv"],
     year: "2026",
-    role: "Developer",
     live: "https://resume.vishalkirtaniya.in/",
     githubFrontend: "https://github.com/vishalkirtaniya/custom-resume-frontend",
     githubBackend: "https://github.com/vishalkirtaniya/custom-resume-backend",
@@ -56,6 +86,7 @@ export const projects = [
   },
   {
     slug: "cipher-chat",
+    category: "Engineering",
     title: "CipherChat",
     tagline: "End-to-end encrypted messaging app with zero server storage",
     description:
@@ -93,6 +124,7 @@ export const projects = [
   },
   {
     slug: "ecommerce-platform",
+    category: "Engineering",
     title: "E-Commerce Platform",
     tagline: "Full-stack shopping experience with real-time inventory",
     description:
@@ -103,7 +135,7 @@ export const projects = [
     live: "https://example.com",
     githubFrontend: "https://github.com/vishalkirtaniya/e-commerce-frontend",
     githubBackend: "https://github.com/vishalkirtaniya/e-commerce-backend",
-    featured: true,
+    featured: false,
     color: "#22d3ee",
     details: {
       challenge:
@@ -119,34 +151,8 @@ export const projects = [
     },
   },
   {
-    slug: "algo-trading",
-    title: "Algorithmic Trading System",
-    tagline: "Backtest, optimize and paper-trade MACD strategies",
-    description:
-      "A Backtrader-based system for backtesting MACD and Bollinger Band strategies with parameter optimization via permutations, ranked by Sharpe ratio, max drawdown, win rate, and IRR.",
-    tags: ["Python", "Backtrader", "Dhan SDK", "SQLAlchemy", "PostgreSQL"],
-    year: "2025",
-    role: "Quant Developer",
-    live: "https://example.com",
-    githubFrontend: "https://github.com/your-username/technical-analysis-frontend",
-    githubBackend: "https://github.com/vishalkirtaniya/technical-analysis",
-    featured: true,
-    color: "#a78bfa",
-    details: {
-      challenge:
-        "Parameter space for strategy optimization is exponentially large. Brute-force evaluation across all combinations was too slow for iterative development.",
-      solution:
-        "Parallelized parameter evaluation using ProcessPoolExecutor across CPU cores. Results are ranked by composite score and persisted for paper trading.",
-      outcomes: [
-        "10x faster optimization vs. single-threaded",
-        "Live paper trading via Dhan SDK",
-        "Exchange-accurate commission & tax models",
-        "Automated best-parameter promotion to live",
-      ],
-    },
-  },
-  {
     slug: "portfolio-site",
+    category: "Engineering",
     title: "Developer Portfolio",
     tagline: "Minimal, animated personal portfolio in Next.js",
     description:
@@ -176,27 +182,34 @@ export const projects = [
 
 export const skills = [
   {
-    category: "Frontend",
-    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "GSAP"],
+    category: "Data Analysis",
+    items: ["Python", "Pandas", "NumPy", "Jupyter", "Google Colab", "EDA", "Data Cleaning"],
   },
   {
-    category: "Backend",
-    items: ["Fastify", "Node.js", "Python", "REST APIs", "WebSockets", "Java"],
+    category: "Machine Learning",
+    items: ["Scikit-learn", "PyTorch", "Model Training", "Deep Learning", "NLP (spaCy)"],
   },
   {
-    category: "Database & Infra",
-    items: ["Supabase", "PostgreSQL", "Redis", "SQLAlchemy", "MySQL"],
+    category: "SQL & Databases",
+    items: ["SQL", "SQLite", "PostgreSQL", "MySQL", "SQLAlchemy", "Schema Design"],
   },
   {
-    category: "DevOps & Tools",
-    items: ["Git", "GitHub Actions", "Docker", "Linux", "uv"],
+    category: "Visualization & Reporting",
+    items: ["Streamlit", "Data Visualization", "Dashboards", "Insight Storytelling"],
   },
   {
     category: "Quantitative",
-    items: ["Backtrader", "Dhan SDK", "Numpy", "Pandas"],
+    items: ["Backtrader", "Backtesting", "Sharpe / Drawdown", "Parameter Optimization", "Dhan SDK"],
   },
   {
-    category: "Learning",
-    items: ["Machine Learning", "PyTorch", "Scikit-learn", "Data Science"],
+    category: "Engineering",
+    items: ["TypeScript", "Next.js", "React", "Node.js", "Fastify", "Docker", "Git", "Linux"],
   },
+];
+
+/** Quick proof-points shown on the home page. Update as you add projects. */
+export const stats = [
+  { value: "120K+", label: "transactions analysed" },
+  { value: "8 → 1", label: "CSVs unified into a SQL database" },
+  { value: "~2 yrs", label: "shipping production software" },
 ];

@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
 import { fadeUp, stagger } from "@/lib/motion";
+import { stats } from "@/lib/data";
 import { useEffect, useState } from "react";
 
-const TITLES = ["Data Scientist", "Data Analyst", "Full Stack Dev"];
+const TITLES = ["Data Scientist", "Data Analyst", "ML Practitioner"];
 
 function useTypewriter(
   words: string[],
@@ -77,7 +78,7 @@ export default function HeroSection() {
           <motion.div variants={fadeUp} className="mb-8">
             <span className="inline-flex items-center gap-2 text-xs font-medium text-cyan-400 border border-cyan-400/20 bg-cyan-400/5 px-3 py-1.5 rounded-full">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-              Available for work
+              Open to Data Science roles
             </span>
           </motion.div>
 
@@ -92,7 +93,7 @@ export default function HeroSection() {
               {/* blinking cursor */}
               <span className="inline-block w-[3px] ml-1 align-middle bg-cyan-400 animate-[blink_1s_step-end_infinite] h-[0.85em] rounded-sm" />
             </span>
-            <span className="text-gray-500">& Builder.</span>
+            <span className="text-gray-500">who ships.</span>
           </motion.h1>
 
           {/* Sub */}
@@ -110,13 +111,13 @@ export default function HeroSection() {
           {/* CTAs */}
           <motion.div
             variants={fadeUp}
-            className="flex flex-wrap items-center gap-4 mb-16"
+            className="flex flex-wrap items-center gap-4 mb-12"
           >
             <Link
               href="/work"
               className="group inline-flex items-center gap-2 bg-cyan-400 text-black text-sm font-semibold px-6 py-3 rounded-full hover:bg-cyan-300 transition-colors duration-200"
             >
-              View my work
+              View data projects
               <ArrowRight
                 size={16}
                 className="group-hover:translate-x-1 transition-transform duration-200"
@@ -129,6 +130,23 @@ export default function HeroSection() {
               Get in touch
             </Link>
           </motion.div>
+
+          {/* Proof points */}
+          <motion.dl
+            variants={fadeUp}
+            className="grid grid-cols-3 gap-6 max-w-xl mb-12 border-t border-white/5 pt-8"
+          >
+            {stats.map((s) => (
+              <div key={s.label}>
+                <dt className="font-display text-2xl sm:text-3xl font-700 text-white">
+                  {s.value}
+                </dt>
+                <dd className="text-xs text-gray-500 mt-1 leading-snug">
+                  {s.label}
+                </dd>
+              </div>
+            ))}
+          </motion.dl>
 
           {/* Socials */}
           <motion.div variants={fadeUp} className="flex items-center gap-1">

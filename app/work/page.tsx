@@ -6,8 +6,13 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import { projects } from "@/lib/data";
 import { fadeUp, stagger, scaleIn } from "@/lib/motion";
 import Footer from "@/components/Footer";
+import { useState } from "react";
+
+const FILTERS = ["All", "Data Science", "Engineering"] as const;
 
 export default function WorkPage() {
+  const [filter, setFilter] = useState<(typeof FILTERS)[number]>("All");
+  const visible = projects.filter((p) => filter === "All" || p.category === filter);
   return (
     <>
       <section className="pt-32 pb-24 max-w-6xl mx-auto px-6">
@@ -25,18 +30,35 @@ export default function WorkPage() {
               All Projects
             </h1>
             <p className="text-gray-400 text-lg leading-relaxed">
-              A collection of things I've built — production apps, side experiments, and everything in between.
+              Data analysis, ML and quantitative projects — plus the software engineering work that lets me ship them.
             </p>
+          </motion.div>
+
+          {/* Filters */}
+          <motion.div variants={fadeUp} className="flex flex-wrap gap-2 mb-10">
+            {FILTERS.map((f) => (
+              <button
+                key={f}
+                onClick={() => setFilter(f)}
+                className={`text-xs font-medium px-4 py-2 rounded-full border transition-colors ${
+                  filter === f
+                    ? "border-cyan-400/40 bg-cyan-400/10 text-cyan-400"
+                    : "border-white/10 text-gray-400 hover:text-white hover:border-white/20"
+                }`}
+              >
+                {f}
+              </button>
+            ))}
           </motion.div>
 
           {/* Grid */}
           <div className="grid md:grid-cols-2 gap-5">
-            {projects.map((project, i) => (
+            {visible.map((project, i) => (
               <motion.article
                 key={project.slug}
                 variants={scaleIn}
                 custom={i}
-                className="group bg-[#0c0c14] border border-white/6 rounded-2xl overflow-hidden hover:border-white/12 transition-all duration-300"
+                className="group relative bg-[#0c0c14] border border-white/6 rounded-2xl overflow-hidden hover:border-white/12 transition-all duration-300"
               >
                 {/* Top accent */}
                 <div

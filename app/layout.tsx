@@ -17,12 +17,12 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Vishal · Full Stack Developer",
-  description: "Full-stack developer crafting clean, performant web experiences.",
-  keywords: ["Next.js", "React", "TypeScript", "Full Stack Developer", "Portfolio"],
+  title: "Vishal · Data Scientist & Analyst",
+  description: "Data scientist and analyst turning messy data into decisions with Python, SQL, machine learning and dashboards.",
+  keywords: ["Data Scientist", "Data Analyst", "Python", "SQL", "Pandas", "Machine Learning", "Streamlit", "Portfolio"],
   openGraph: {
-    title: "Vishal · Full Stack Developer",
-    description: "Full-stack developer crafting clean, performant web experiences.",
+    title: "Vishal · Data Scientist & Analyst",
+    description: "Data scientist and analyst turning messy data into decisions with Python, SQL, machine learning and dashboards.",
     type: "website",
   },
 };
